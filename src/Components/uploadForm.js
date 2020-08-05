@@ -25,16 +25,18 @@ const UploadForm = () => {
         if (selected && types.includes(selected.type)) {
             setFile(selected)
             setError("");
+            console.log(file)
         } else {
             setFile(null);
             setError("Plz select an image file png or jpg");
+            console.log(file)
         }
     }
 
     return (
         <form>
             <label>
-                <input type='file' onchange={handleChange}/>
+                <input type='file' onChange={handleChange}/>
                 <span>+</span>
             </label>
             <OutPut>

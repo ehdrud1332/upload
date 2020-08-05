@@ -1,5 +1,6 @@
 import React, {useState} from 'react';
 import styled from 'styled-components';
+import ProgressBar from "./ProgressBar";
 
 const OutPut = styled.output`
   height: 60px;
@@ -42,6 +43,7 @@ const UploadForm = () => {
             <OutPut>
                 {error && <Error>{error}</Error>}
                 {file && <div>{file.name}</div>}
+                {file && <ProgressBar file={file} setFile={setFile} />}
             </OutPut>
         </form>
     );

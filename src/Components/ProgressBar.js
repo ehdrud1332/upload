@@ -1,12 +1,12 @@
 import React, {useEffect} from 'react';
 import useStorage from "../hooks/useStorage";
-import styled from 'styled-components';
+import {motion} from 'framer-motion';
 
-const Prog = styled.div`
-  height: 5px;
-  background: #efb6b2;
-  margin-top: 20px;
-`;
+// const Prog = styled.div`
+//   height: 5px;
+//   background: #efb6b2;
+//   margin-top: 20px;
+// `;
 
 const ProgressBar = ({file, setFile}) => {
 
@@ -19,7 +19,10 @@ const ProgressBar = ({file, setFile}) => {
     }, [url, setFile])
 
     return (
-        <Prog style={{width: progress + '%'}}/>
+        <motion.div className="progress-bar"
+                    initial={{width: 0}}
+                    animate={{width: progress + '%'}}
+        />
     );
 };
 
